@@ -6,10 +6,12 @@ import lucadipietro.U5_W1_D4.entities.Topping;
 import lucadipietro.U5_W1_D4.enums.PizzaType;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 
 import java.util.Arrays;
 
 @Configuration
+@PropertySource("application.properties")
 public class BeansConfig {
     @Bean
     public Topping getTomato(){

@@ -1,7 +1,7 @@
 package lucadipietro.U5_W1_D4;
 
 import lucadipietro.U5_W1_D4.entities.Pizza;
-import lucadipietro.U5_W1_D4.service.MenuElementService;
+import lucadipietro.U5_W1_D4.service.MenuElementsService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class MyRunner implements CommandLineRunner {
     @Autowired
-    private MenuElementService menuElementService;
+    private MenuElementsService menuElementsService;
 
     @Override
     public void run(String... args) throws Exception {
@@ -18,6 +18,6 @@ public class MyRunner implements CommandLineRunner {
 
         Pizza margherita = (Pizza) ctx.getBean("getMargheritaPizza");
 
-        menuElementService.saveMenuElement(margherita);
+        menuElementsService.saveMenuElement(margherita);
     }
 }
