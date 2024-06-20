@@ -1,9 +1,6 @@
 package lucadipietro.U5_W1_D4.entities;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.EnumType;
-import jakarta.persistence.Enumerated;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -16,7 +13,8 @@ import java.util.List;
 @Setter
 @NoArgsConstructor
 public class Pizza extends MenuElement{
-    @OneToMany(mappedBy = "pizza")
+    @ManyToMany
+    @JoinTable(name = "pizza_topping", joinColumns = @JoinColumn(name = "pizza_id"), inverseJoinColumns = @JoinColumn(name = "topping_id"))
     private List<Topping> toppings;
     @Enumerated(EnumType.STRING)
     private PizzaType pizzaType;

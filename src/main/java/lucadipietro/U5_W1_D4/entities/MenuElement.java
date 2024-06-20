@@ -13,7 +13,7 @@ import lombok.*;
 @Setter
 public abstract class MenuElement {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Setter(AccessLevel.NONE)
     private long id;
     private String name;
